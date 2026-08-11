@@ -1,0 +1,11 @@
+## Ignore Visual Studio & Rider Artifacts
+.vs/
+obj/
+bin/
+*.user
+*.suo
+.idea/
+
+## Ignore OS-generated files
+.DS_Store
+Thumbs.db

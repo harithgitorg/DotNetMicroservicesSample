@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  catalog.api:
+    image: ${DOCKER_REGISTRY_INDEX:-local}/catalogservice:latest
+    build:
+      context: .
+      dockerfile: CatalogService/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Logging__LogLevel__Default=Information
+
+  ordering.api:
+    image: ${DOCKER_REGISTRY_INDEX:-local}/orderingservice:latest
+    build:
+      context: .
+      dockerfile: OrderingService/Dockerfile
+    ports:
+      - "5002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Logging__LogLevel__Default=Information
