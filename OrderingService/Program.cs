@@ -20,7 +20,7 @@ app.UseAuthorization();
 // Routing definitions demonstrating inter-service execution context
 app.MapGet("/api/orders", (OrderStore store) => Results.Ok(store.GetAllOrders()))
    .WithName("GetOrders")
-   .WithOpenApi();
+    ;
 
 app.MapPost("/api/orders", ([FromBody] SubmitOrderDto dto, OrderStore store) => 
 {
@@ -32,7 +32,7 @@ app.MapPost("/api/orders", ([FromBody] SubmitOrderDto dto, OrderStore store) =>
     return Results.Created($"/api/orders/{newOrder.OrderId}", newOrder);
 })
 .WithName("PlaceOrder")
-.WithOpenApi();
+;
 
 app.Run();
 
