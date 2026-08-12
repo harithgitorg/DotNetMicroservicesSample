@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordering-service
+  labels:
+    app: ordering-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ordering-service
+  template:
+    metadata:
+      labels:
+        app: ordering-service
+    spec:
+      containers:
+        - name: ordering-service
+          image: REPLACE_WITH_ORDERING_IMAGE
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_URLS
+              value: "http://+:8080"
