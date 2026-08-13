@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: catalog-service
-          image: REPLACE_WITH_CATALOG_IMAGE
+          image: testharithacr.azurecr.io/catalogservice:latest
           ports:
             - containerPort: 8080
           env:

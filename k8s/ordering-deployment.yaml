@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ordering-service
-          image: REPLACE_WITH_ORDERING_IMAGE
+          image: testharithacr.azurecr.io/orderingservice:latest
           ports:
             - containerPort: 8080
           env:
