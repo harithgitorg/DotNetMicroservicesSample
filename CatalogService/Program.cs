@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add application abstractions and services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthorization();
 builder.Services.AddSingleton<CatalogRepository>();
 
 var app = builder.Build();
