@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ordering-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: ordering-service
   ports:
